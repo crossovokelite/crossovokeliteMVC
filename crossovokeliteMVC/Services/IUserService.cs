@@ -1,0 +1,12 @@
+﻿using crossovokeliteMVC.Models;
+using System;
+
+namespace crossovokeliteMVC.Services
+{
+    public interface IUserService
+    {
+        User GetBy(int id);
+        User GetBy(string username);
+        User Create(string username, string password, UserProfile profile, DateTime? created = null);
+    }
+}
