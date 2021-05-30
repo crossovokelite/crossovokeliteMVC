@@ -1,9 +1,9 @@
-﻿using System;
+﻿using crossovokeliteMVC.Models;
+using crossovokeliteMVC.ViewModel;
+using System;
 using System.Web;
-using crossovokeliteMVC.Models;
 using System.Web.Helpers;
 using System.Web.SessionState;
-using crossovokeliteMVC.ViewModel;
 
 namespace crossovokeliteMVC.Services
 {
@@ -57,7 +57,7 @@ namespace crossovokeliteMVC.Services
 
         public bool IsAuthenticated
         {
-            get { return UserId > 0;}
+            get { return UserId > 0; }
         }
 
         public void Login(User user)

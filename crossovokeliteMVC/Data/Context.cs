@@ -6,7 +6,7 @@ namespace crossovokeliteMVC.Data
     {
         private readonly DbContext _db;
 
-        public Context(DbContext context = null, IUserRepository users = null, 
+        public Context(DbContext context = null, IUserRepository users = null,
             IRcrdRepository rcrds = null)
         {
             _db = context ?? new RcrdDatabase();

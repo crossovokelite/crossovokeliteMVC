@@ -19,10 +19,10 @@ namespace crossovokeliteMVC.Data
 
         T Find(params object[] keys);
         T Find(Expression<Func<T, bool>> predicate);
-        
+
         IQueryable<T> FindAll(Expression<Func<T, bool>> predicate);
         IQueryable<T> FindAll(Expression<Func<T, bool>> predicate, int index, int size);
 
-        int Update(T t);        
+        int Update(T t);
     }
 }

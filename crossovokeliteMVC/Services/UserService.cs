@@ -27,7 +27,7 @@ namespace crossovokeliteMVC.Services
 
         }
 
-        public User Create(string username, string password, 
+        public User Create(string username, string password,
             UserProfile profile, DateTime? created = null)
         {
             var user = new User()
