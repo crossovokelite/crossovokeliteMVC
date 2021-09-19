@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace crossovokeliteMVC.Controllers
 {
-    public class AccountController : RcrdControllerBase
+    public class AccountController : EagletControllerBase
     {
         [HttpPost]
         [ValidateAntiForgeryToken]

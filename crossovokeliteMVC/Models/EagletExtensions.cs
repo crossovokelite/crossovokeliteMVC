@@ -2,12 +2,12 @@
 
 namespace crossovokeliteMVC.Models
 {
-    public static class RcrdExtensions
+    public static class EagletExtensions
     {
-        public static string FriendlyTimestamp(this Rcrd rcrd)
+        public static string FriendlyTimestamp(this Eaglet eaglet)
         {
             var now = DateTime.Now;
-            var date = rcrd.DateCreated;
+            var date = eaglet.DateCreated;
             var span = now - date;
 
             if (span > TimeSpan.FromHours(24))
@@ -26,7 +26,6 @@ namespace crossovokeliteMVC.Models
             }
 
             return "now";
-
         }
     }
 }

@@ -16,11 +16,11 @@ namespace crossovokeliteMVC.Models
 
         [ForeignKey("UserProfileId")]
         public virtual UserProfile Profile { get; set; }
-        private ICollection<Rcrd> _rcrds;
-        public virtual ICollection<Rcrd> Rcrds
+        private ICollection<Eaglet> _eaglets;
+        public virtual ICollection<Eaglet> Eaglets
         {
-            get { return _rcrds ?? (_rcrds = new Collection<Rcrd>()); }
-            set { _rcrds = value; }
+            get { return _eaglets ?? (_eaglets = new Collection<Eaglet>()); }
+            set { _eaglets = value; }
         }
     }
 }

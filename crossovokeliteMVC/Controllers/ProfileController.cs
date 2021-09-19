@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace crossovokeliteMVC.Controllers
 {
-    public class ProfileController : RcrdControllerBase
+    public class ProfileController : EagletControllerBase
     {
         //
         // GET: /Profile/

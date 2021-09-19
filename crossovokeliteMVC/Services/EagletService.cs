@@ -6,44 +6,44 @@ using System.Collections.Generic;
 
 namespace crossovokeliteMVC.Services
 {
-    public class RcrdService : IRcrdService
+    public class EagletService : IEagletService
     {
         private readonly IContext _context;
-        private readonly IRcrdRepository _rcrds;
+        private readonly IEagletRepository _eaglets;
 
-        public RcrdService(IContext context)
+        public EagletService(IContext context)
         {
             _context = context;
-            _rcrds = context.Rcrds;
+            _eaglets = context.Eaglets;
         }
 
-        public Rcrd GetBy(int id)
+        public Eaglet GetBy(int id)
         {
-            return _rcrds.GetBy(id);
+            return _eaglets.GetBy(id);
         }
 
-        public Rcrd Create(User user, string status, DateTime? created = null)
+        public Eaglet Create(User user, string status, DateTime? created = null)
         {
-            var rcrd = new Rcrd()
+            var rcrd = new Eaglet()
             {
                 Status = status,
                 DateCreated = created.HasValue ? created.Value : DateTime.Now
 
             };
 
-            _rcrds.AddFor(rcrd, user);
+            _eaglets.AddFor(rcrd, user);
 
             _context.SaveChanges();
 
             return rcrd;
         }
 
-        public Rcrd Create(int userId, string status, DateTime? created = null)
+        public Eaglet Create(int userId, string status, DateTime? created = null)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Rcrd> GetTimelineFor(int userId)
+        public IEnumerable<Eaglet> GetTimelineFor(int userId)
         {
             throw new NotImplementedException();
         }

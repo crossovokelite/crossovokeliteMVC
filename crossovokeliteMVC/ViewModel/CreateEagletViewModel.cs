@@ -2,7 +2,7 @@
 
 namespace crossovokeliteMVC.ViewModel
 {
-    public class CreateRcrdViewModel
+    public class CreateEagletViewModel
     {
         [Required]
         [MaxLength(140, ErrorMessage = "Status cannot be more than 140 characters.")]

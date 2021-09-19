@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace crossovokeliteMVC.Models
 {
-    public class Rcrd
+    public class Eaglet
     {
         public int Id { get; set; }
 

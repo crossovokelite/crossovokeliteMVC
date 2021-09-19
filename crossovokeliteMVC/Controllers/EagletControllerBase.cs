@@ -6,15 +6,15 @@ using System.Web.Mvc;
 
 namespace crossovokeliteMVC.Controllers
 {
-    public class RcrdControllerBase : Controller
+    public class EagletControllerBase : Controller
     {
         protected IContext DataContext;
         public User CurrentUser { get; private set; }
-        public IRcrdService Rcrds { get; private set; }
+        public IEagletService Eaglets { get; private set; }
         public IUserService Users { get; private set; }
         public ISecurityService Security { get; private set; }
 
-        public RcrdControllerBase()
+        public EagletControllerBase()
         {
             DataContext = new Context();
             Users = new UserService(DataContext);

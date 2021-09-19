@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace crossovokeliteMVC.Controllers
 {
-    public class HomeController : RcrdControllerBase
+    public class HomeController : EagletControllerBase
     {
         public HomeController() : base() { }
 
@@ -16,7 +16,7 @@ namespace crossovokeliteMVC.Controllers
                 return View("Landing", new LoginSignupViewModel());
             }
 
-            var timeline = Rcrds.GetTimelineFor(Security.UserId).ToArray();
+            var timeline = Eaglets.GetTimelineFor(Security.UserId).ToArray();
 
             return View("Timeline", timeline);
         }
@@ -54,17 +54,17 @@ namespace crossovokeliteMVC.Controllers
         [ChildActionOnly]
         public ActionResult Create()
         {
-            return PartialView("_CreateRcrdPartial", new CreateRcrdViewModel());
+            return PartialView("_CreateRcrdPartial", new CreateEagletViewModel());
         }
 
         [HttpPost]
         [ChildActionOnly]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CreateRcrdViewModel model)
+        public ActionResult Create(CreateEagletViewModel model)
         {
             if (ModelState.IsValid)
             {
-                Rcrds.Create(Security.UserId, model.Status);
+                Eaglets.Create(Security.UserId, model.Status);
 
                 Response.Redirect("/");
             }

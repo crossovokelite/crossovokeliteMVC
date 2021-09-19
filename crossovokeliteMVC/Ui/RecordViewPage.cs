@@ -5,14 +5,14 @@ using System.Web.Mvc;
 
 namespace crossovokeliteMVC.Ui
 {
-    public abstract class RcrdViewPage : WebViewPage
+    public abstract class EagletViewPage : WebViewPage
     {
         protected IContext DataContext;
         public User CurrentUser { get; private set; }
         public IUserService Users { get; private set; }
         public ISecurityService Security { get; private set; }
 
-        public RcrdViewPage()
+        public EagletViewPage()
         {
             DataContext = new Context();
             Users = new UserService(DataContext);
@@ -21,14 +21,14 @@ namespace crossovokeliteMVC.Ui
         }
     }
 
-    public abstract class RcrdViewPage<TModel> : WebViewPage<TModel>
+    public abstract class EagletViewPage<TModel> : WebViewPage<TModel>
     {
         protected IContext DataContext;
         public User CurrentUser { get; private set; }
         public IUserService Users { get; private set; }
         public ISecurityService Security { get; private set; }
 
-        public RcrdViewPage()
+        public EagletViewPage()
         {
             DataContext = new Context();
             Users = new UserService(DataContext);

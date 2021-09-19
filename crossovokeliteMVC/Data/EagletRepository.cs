@@ -5,24 +5,24 @@ using System.Linq;
 
 namespace crossovokeliteMVC.Data
 {
-    public class RcrdRepository : EfRepository<Rcrd>, IRcrdRepository
+    public class EagletRepository : EfRepository<Eaglet>, IEagletRepository
     {
-        public RcrdRepository(DbContext context, bool sharedContext)
+        public EagletRepository(DbContext context, bool sharedContext)
             : base(context, sharedContext) { }
 
-        public Rcrd GetBy(int id)
+        public Eaglet GetBy(int id)
         {
             return Find(r => r.Id == id);
         }
 
-        public IEnumerable<Rcrd> GetFor(User user)
+        public IEnumerable<Eaglet> GetFor(User user)
         {
-            return user.Rcrds.OrderByDescending(r => r.DateCreated);
+            return user.Eaglets.OrderByDescending(r => r.DateCreated);
         }
 
-        public void AddFor(Rcrd rcrd, User user)
+        public void AddFor(Eaglet rcrd, User user)
         {
-            user.Rcrds.Add(rcrd);
+            user.Eaglets.Add(rcrd);
 
             if (!ShareContext)
             {

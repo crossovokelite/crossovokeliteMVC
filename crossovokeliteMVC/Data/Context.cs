@@ -7,11 +7,11 @@ namespace crossovokeliteMVC.Data
         private readonly DbContext _db;
 
         public Context(DbContext context = null, IUserRepository users = null,
-            IRcrdRepository rcrds = null)
+            IEagletRepository rcrds = null)
         {
-            _db = context ?? new RcrdDatabase();
+            _db = context ?? new EagletDatabase();
             Users = users ?? new UserRepository(_db, true);
-            Rcrds = rcrds ?? new RcrdRepository(_db, true);
+            Eaglets = rcrds ?? new EagletRepository(_db, true);
         }
 
         public IUserRepository Users
@@ -20,7 +20,7 @@ namespace crossovokeliteMVC.Data
             private set;
         }
 
-        public IRcrdRepository Rcrds
+        public IEagletRepository Eaglets
         {
             get;
             private set;
